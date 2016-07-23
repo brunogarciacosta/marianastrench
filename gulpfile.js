@@ -2,14 +2,12 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
-var useref = require('gulp-useref');
-var pump = require('pump');
 var cleanCSS = require('gulp-clean-css');
-
+var deploy = require('gulp-deploy-git');
 
 
 gulp.task('sass', function() {
-  return gulp.src('dev/sass/**/*.sass') 
+  return gulp.src('dev/sass/**/*.sass')
     .pipe(sass())
     .pipe(gulp.dest('dev/css'))
 })
@@ -39,7 +37,7 @@ gulp.task('html', function(){
 
 
 gulp.task('watch', function(){
-  gulp.watch('dev/sass/**/*.sass', ['sass']); 
+  gulp.watch('dev/sass/**/*.sass', ['sass']);
 })
 
 gulp.task('build', [`sass`, `images`, `html`, `jsmin`, `cssmin`], function (){

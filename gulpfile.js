@@ -36,6 +36,8 @@ gulp.task('html', function(){
 });
 
 
+
+
 gulp.task('watch', function(){
   gulp.watch('dev/sass/**/*.sass', ['sass']);
 })
@@ -43,3 +45,11 @@ gulp.task('watch', function(){
 gulp.task('build', [`sass`, `images`, `html`, `jsmin`, `cssmin`], function (){
   console.log('Construindo dist');
 })
+
+gulp.task('deploy', function(){
+  return gulp.src('dist/**/*')
+    .pipe(deploy({
+      repository: 'https://github.com/brunogarciacosta/marianastrench.git',
+      branches:   ['gh-pages']
+    }));
+});

@@ -3,8 +3,14 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 var cleanCSS = require('gulp-clean-css');
-var deploy = require('gulp-deploy-git');
+var ghPages = require('gulp-gh-pages');
+var pump = require('pump');
 
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
 
 gulp.task('sass', function() {
   return gulp.src('dev/sass/**/*.sass')
@@ -44,12 +50,4 @@ gulp.task('watch', function(){
 
 gulp.task('build', [`sass`, `images`, `html`, `jsmin`, `cssmin`], function (){
   console.log('Construindo dist');
-})
-
-gulp.task('deploy', function(){
-  return gulp.src('dist/**/*')
-    .pipe(deploy({
-      repository: 'https://github.com/brunogarciacosta/marianastrench.git',
-      branches:   ['gh-pages']
-    }));
 });

@@ -1,0 +1,34 @@
+{
+  "name": "marianastrench",
+  "version": "1.0.0",
+  "description": "Marianas trench interactive infographich",
+  "main": "js/marianas.js",
+  "scripts": {
+    "test": "a"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunogarciacosta/marianastrench.git"
+  },
+  "keywords": [
+    "Infographic",
+    "Marianas",
+    "Trench",
+    "babies"
+  ],
+  "author": "Bruno Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunogarciacosta/marianastrench/issues"
+  },
+  "homepage": "https://github.com/brunogarciacosta/marianastrench#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.11",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "gulp-useref": "^3.1.0"
+  }
+}

@@ -49,5 +49,5 @@ gulp.task('watch', function(){
 })
 
 gulp.task('build', [`sass`, `images`, `html`, `jsmin`, `cssmin`], function (){
-  console.log('Construindo dist');
+  console.log('Deploy ghpages');
 });

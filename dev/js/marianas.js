@@ -94,7 +94,7 @@ var scrollSpeedMonitor = new ScrollSpeedMonitor(function (speedInPxPerMs, timeSt
 $(document).ready(function() {
                 $(window).scroll(function() {
                     var d = $("#depth-counter");
-                    var depth = Math.floor($(window).scrollTop() / 3);
+                    var depth = Math.floor($(window).scrollTop() / 2);
                     var metric = $("#metric");
                     
                     if (depth > 1000) {
